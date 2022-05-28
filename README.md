@@ -53,6 +53,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### Intrigating using GraphQL with AWS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Check this video right here: [https://www.youtube.com/watch?v=-22iNS9axdE&ab_channel=all-things-software]
+
+Another cool solution could be this: [https://docs.amplify.aws/start/getting-started/data-model/q/integration/react/#connect-frontend-to-api]
+
+### Amplify documentation.
+
+Docs -> [https://docs.amplify.aws/cli/graphql/authorization-rules/]
+
+
