@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nextapp-main-220827-authRole",
+      "UnauthRoleArn": "arn:aws:iam::002655968841:role/amplify-nextapp-main-220827-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::002655968841:role/amplify-nextapp-main-220827-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-nextapp-main-220827-deployment",
+      "UnauthRoleName": "amplify-nextapp-main-220827-unauthRole",
+      "StackName": "amplify-nextapp-main-220827",
+      "StackId": "arn:aws:cloudformation:us-east-2:002655968841:stack/amplify-nextapp-main-220827/1424ec20-e67c-11ec-8ebc-06b457aea662",
+      "AmplifyAppId": "d1buwdkn4cogi1"
+    }
+  },
+  "auth": {
+    "nextappd0209a95": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-nextapp-main-220827-deployment/amplify-cfn-templates/auth/nextappd0209a95-cloudformation-template.json",
+        "logicalId": "authnextappd0209a95"
+      },
+      "lastPushTimeStamp": "2022-06-07T16:33:07.743Z",
+      "output": {
+        "UserPoolId": "us-east-2_SQpb4AbtN",
+        "AppClientIDWeb": "5qk02tuu1u0aq777cm499p9iof",
+        "AppClientID": "2ht9p6gpeseuagl4ut6hm1b9tv",
+        "IdentityPoolId": "us-east-2:4ac3dbc4-374d-446d-a656-5ae888325303",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:002655968841:userpool/us-east-2_SQpb4AbtN",
+        "IdentityPoolName": "nextappd0209a95_identitypool_d0209a95__main",
+        "UserPoolName": "nextappd0209a95_userpool_d0209a95"
+      },
+      "lastPushDirHash": "fYNxE7roroXAbobfE7d96QM/+98="
+    }
+  }
+}
