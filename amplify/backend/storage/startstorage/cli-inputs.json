@@ -1,0 +1,15 @@
+{
+  "resourceName": "startstorage",
+  "policyUUID": "358a1e04",
+  "bucketName": "nextapp8758854a56ae4916a3c0e7567237dc98",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}

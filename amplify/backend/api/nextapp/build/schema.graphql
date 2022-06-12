@@ -1,0 +1,204 @@
+
+type S3Object {
+  id: ID!
+  name: String!
+  bucket: String!
+  key: String!
+  contentType: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Service {
+  servicename: String!
+  firstname: String!
+  lastname: String!
+  email: String!
+  password: String!
+  personalInformation: Personal!
+  professionalInformation: Professional!
+}
+
+type Personal {
+  details: String!
+  photo: S3Object!
+  address: String!
+  service: Service!
+  nidfront: S3Object!
+  nidback: S3Object!
+}
+
+type Professional {
+  plate: String!
+  specialize: String!
+  serviceName: String!
+  device: String!
+  yearsofExperience: String!
+  location: String!
+  photographyLocation: String!
+  portfolioImages: [S3Object!]
+  service: Service!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelS3ObjectConnection {
+  items: [S3Object]!
+  nextToken: String
+}
+
+input ModelS3ObjectFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  bucket: ModelStringInput
+  key: ModelStringInput
+  contentType: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelS3ObjectFilterInput]
+  or: [ModelS3ObjectFilterInput]
+  not: ModelS3ObjectFilterInput
+}
+
+type Query {
+  getS3Object(id: ID!): S3Object
+  listS3Objects(filter: ModelS3ObjectFilterInput, limit: Int, nextToken: String): ModelS3ObjectConnection
+}
+
+input ModelS3ObjectConditionInput {
+  name: ModelStringInput
+  bucket: ModelStringInput
+  key: ModelStringInput
+  contentType: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelS3ObjectConditionInput]
+  or: [ModelS3ObjectConditionInput]
+  not: ModelS3ObjectConditionInput
+}
+
+input CreateS3ObjectInput {
+  id: ID
+  name: String!
+  bucket: String!
+  key: String!
+  contentType: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateS3ObjectInput {
+  id: ID!
+  name: String
+  bucket: String
+  key: String
+  contentType: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteS3ObjectInput {
+  id: ID!
+}
+
+type Mutation {
+  createS3Object(input: CreateS3ObjectInput!, condition: ModelS3ObjectConditionInput): S3Object
+  updateS3Object(input: UpdateS3ObjectInput!, condition: ModelS3ObjectConditionInput): S3Object
+  deleteS3Object(input: DeleteS3ObjectInput!, condition: ModelS3ObjectConditionInput): S3Object
+}
+
+type Subscription {
+  onCreateS3Object: S3Object @aws_subscribe(mutations: ["createS3Object"])
+  onUpdateS3Object: S3Object @aws_subscribe(mutations: ["updateS3Object"])
+  onDeleteS3Object: S3Object @aws_subscribe(mutations: ["deleteS3Object"])
+}
+

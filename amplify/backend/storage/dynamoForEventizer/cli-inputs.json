@@ -1,0 +1,14 @@
+{
+  "resourceName": "dynamoForEventizer",
+  "tableName": "vendors",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "nameOfService",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

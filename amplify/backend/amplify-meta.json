@@ -42,7 +42,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-nextapp-main-220827-deployment/amplify-cfn-templates/auth/nextappd0209a95-cloudformation-template.json",
         "logicalId": "authnextappd0209a95"
       },
-      "lastPushTimeStamp": "2022-06-07T16:33:07.743Z",
+      "lastPushTimeStamp": "2022-06-08T09:02:22.194Z",
       "output": {
         "UserPoolId": "us-east-2_SQpb4AbtN",
         "AppClientIDWeb": "5qk02tuu1u0aq777cm499p9iof",
@@ -53,6 +53,36 @@
         "UserPoolName": "nextappd0209a95_userpool_d0209a95"
       },
       "lastPushDirHash": "fYNxE7roroXAbobfE7d96QM/+98="
+    }
+  },
+  "api": {
+    "nextapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
+  },
+  "storage": {
+    "startstorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2022-06-08T09:02:26.120Z"
+    },
+    "dynamoForEventizer": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   }
 }

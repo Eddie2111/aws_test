@@ -1,0 +1,7 @@
+{
+  "tableName": "vendors",
+  "partitionKeyName": "id",
+  "partitionKeyType": "S",
+  "sortKeyName": "nameOfService",
+  "sortKeyType": "S"
+}

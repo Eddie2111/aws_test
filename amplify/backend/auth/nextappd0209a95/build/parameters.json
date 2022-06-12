@@ -1,6 +1,6 @@
 {
   "identityPoolName": "nextappd0209a95_identitypool_d0209a95",
-  "allowUnauthenticatedIdentities": false,
+  "allowUnauthenticatedIdentities": true,
   "resourceNameTruncated": "nextapd0209a95",
   "userPoolName": "nextappd0209a95_userpool_d0209a95",
   "autoVerifiedAttributes": [
